@@ -1,0 +1,22 @@
+<apex:page sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0">
+<link rel="stylesheet" onload="NPRL.onLoadStyle(this)" onerror="NPRL.onErrorStyle(this)" href="https://cdn-ekkia.nitrocdn.com/phmUhPtuIxzwGaHuGfiNulkVBbnSOsWu/assets/static/optimized/rev-6351ef3/combinedCss/nitro-min-noimport-e5d069da8df1b4cd3d7bdcd696945926-stylesheet.css"/>
+
+<div class="header_media with_search_4 header_media_non_elementor">
+ <div class="wpestate_header_video full_screen_no parallax_effect_yes" style="height:700px;">
+ 
+ 
+ <video id="hero-vid" class="header_video" poster="https://cdn-ekkia.nitrocdn.com/phmUhPtuIxzwGaHuGfiNulkVBbnSOsWu/assets/static/optimized/rev-6351ef3/wp-content/uploads/2021/08/Screenshot-2021-08-27-at-8.29.35-PM.png" width="100%" height="100%" autoplay="autoplay" muted="muted" loop="loop">
+  <source src="/resource/1667562270000/promotionvedio" type="video/mp4"/> 
+  <source src="" type="video/webm" /> <source src="" type="video/ogg" />
+  </video>
+      <div class="wpestate_header_video_overlay" style="background-color:#000;opacity:.3;background-image:url(&quot;&quot;);"></div>
+          <div class="heading_over_video_wrapper">
+              <h1 class="heading_over_video">Your Dream Home, Your Dream Life</h1>
+              <div class="subheading_over_video">Find the best deals on our portal</div>
+          </div>
+      </div>
+   </div>
+
+
+
+</apex:page>

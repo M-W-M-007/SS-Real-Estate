@@ -1,0 +1,11 @@
+<template>
+	<div style="display: none;">
+		{recordId}
+	</div>
+
+	<template if:true={files} for:each={files} for:item="file">
+		<lightning-card key={file}>
+			<img src={file} width="100%"/>
+        </lightning-card>
+	</template>
+</template>

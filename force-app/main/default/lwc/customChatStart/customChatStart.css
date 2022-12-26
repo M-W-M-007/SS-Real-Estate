@@ -1,0 +1,11 @@
+.dummy{
+	color : black;
+}
+.chat-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+	cursor: pointer;
+    padding:25px;
+}

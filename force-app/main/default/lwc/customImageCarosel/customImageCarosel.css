@@ -1,0 +1,70 @@
+.custom-box {
+  width: 17rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+/* .custom-box-detail-page {
+  width: 18rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+} */
+.mobile-custom-box {
+  width: 16.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .custom-box-detail-page {
+    width: 15.3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1400px) {
+  .custom-box-detail-page {
+    width: 18rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.strikediag {
+  background: linear-gradient(to left top, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+}
+
+.qbtn{
+    /* color : #009A00 !important;
+    background-color: white !important;
+    border-color: #009A00 !important;
+    border-style: solid !important; 
+    vertical-align: middle !important;  */
+    border: none !important; 
+    border-radius: unset !important;
+    padding:5px !important;
+}
+.qbtn fa{
+    vertical-align: middle !important;
+}
+
+.customStageDiscount{
+  background-color: #0090e3 !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.directly-available{
+  color: white;
+  background-color: #006700;
+  font-size: 7px;
+  margin-right: -6px;
+}
+
+.inclvat{
+  font-size: 10px;
+  margin-left: -6px;
+  white-space: nowrap;
+}

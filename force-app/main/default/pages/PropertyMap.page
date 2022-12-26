@@ -1,0 +1,86 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" sidebar="false" showHeader="false" standardController="Property__c" extensions="MapPropertyController">
+    <html>
+        
+    
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Google Maps Multiple Markers</title> 
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyBZsH0US1O6fSogoqBTUpUkvEWqs-rYMlY&sensor=false" 
+          type="text/javascript"></script>
+    
+    <style>
+        .thumb{
+            width: 150px;
+    height: 100px;
+    background-size: cover;
+        }
+        
+        table td{
+            border: 1px solid #000;
+    padding: 0.2rem;
+    font-size: smaller;
+        }
+        table{
+            border-collapse : collapse;
+        }
+    </style>
+</head> 
+<body>
+  <div id="map" style="width: 100%; height: 400px;"></div>
+
+  <script type="text/javascript">
+    var locations = [
+      ['{!property.Name}', {!property.Address__Latitude__s}, {!property.Address__Longitude__s}]
+    ];
+    
+    const INDIA_BOUNDS = {
+  north: 35.513327,
+  south: 6.4626999,
+  west: 68.1097,
+  east: 97.39535869999999,
+};
+
+const RAJASTHAN_BOUNDS = {
+  north: 30.1982126,
+  south: 23.0632669,
+  west: 69.4844128,
+  east: 78.26338109999999
+};
+
+
+
+
+
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: new google.maps.LatLng({!property.Address__Latitude__s}, {!property.Address__Longitude__s}),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      restriction: {
+      latLngBounds: RAJASTHAN_BOUNDS,
+      strictBounds: false,
+    }
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+        infowindow.setContent('<div class="iw"><table><tr><td style="background-color:white"><div class="thumb" style="background-image:url(https://ibirds39-dev-ed.develop.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Jpg&versionId={!files[0]})"></div></td><td valign="top" style="background-color:#357270;color:#fff">{!property.description__c} </td></tr></table>');
+      
+        infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+    </body>
+        </html>
+</apex:page>

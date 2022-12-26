@@ -1,0 +1,28 @@
+<template>
+    <div class="container">
+        <label if:true={label} class="slds-form-element__label label-cls">{label}</label>
+        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+            <input type="text" class="slds-input slds-combobox__input slds-combobox__input-value input-cls"
+                onclick={handleClickCancel} value={selectedValues} placeholder={placeholder} onblur={handleBlur}/>
+            <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+                <lightning-icon icon-name="utility:down" size="x-small" class="icon-cls"></lightning-icon>
+            </span>
+        </div>
+    <div if:true={hasDropdown} style="border:1px solid grey;border-radius:2px;width: 100%;max-width:100%; margin-left: -2px;" class="drop-down-list" onclick={myMethod}>
+            <lightning-card>
+                <div class="slds-p-horizontal_small">
+                    <lightning-checkbox-group if:true={options} name="Checkbox Group" label="Combobox"
+                        variant="label-hidden" options={picklistOptions} value={selectedValues} onchange={handleChange}>
+                    </lightning-checkbox-group>
+                    <div if:false={options}>
+                        No options.
+                    </div>
+                </div>
+                <div slot="footer">
+                    
+                </div>
+
+            </lightning-card>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,106 @@
+<template>
+	<template if:true={isApplyForEnquiry}>
+		<p>{rendomOTPNumber}</p>
+		<lightning-quick-action-panel header={header}>
+			<lightning-record-edit-form object-api-name='Enquiry__c' onsuccess={handleLeadCreated}
+				onsubmit={handleSubmit}>
+				<lightning-messages></lightning-messages>
+				<lightning-layout multiple-rows>
+					<lightning-layout-item size="12" class='slds-hide otpInput' padding="around-small">
+						<lightning-layout multiple-rows horizontal-align='center'>
+							<lightning-layout-item size="3" padding="around-small" small-device-size="3"
+								medium-device-size="3" large-device-size="2">
+								<!-- <lightning-input style='text-align: center;' type="text" name='one' class='one' max-length='1' onchange={handleOtpInput}>
+									</lightning-input> -->
+								<input style='text-align: center;' type="text" name='one' class='one slds-input' maxlength='1' onkeyup={handleOtpInput}></input>
+							</lightning-layout-item>
+							<lightning-layout-item size="3" padding="around-small" small-device-size="3"
+								medium-device-size="3" large-device-size="2">
+								<!-- <lightning-input type="text" name='two' class='two' max-length='1' onchange={handleOtpInput}>
+									</lightning-input> -->
+								<input style='text-align: center;' type="text" name='two' class='two slds-input' maxlength='1' onkeyup={handleOtpInput}></input>
+							</lightning-layout-item>
+							<lightning-layout-item size="3" padding="around-small" small-device-size="3"
+								medium-device-size="3" large-device-size="2">
+								<!-- <lightning-input type="text"  name='three' class='three' max-length='1' onchange={handleOtpInput}>
+									</lightning-input> -->
+								<input style='text-align: center;' type="text" name='three' class='three slds-input' maxlength='1' onkeyup={handleOtpInput}></input>
+							</lightning-layout-item>
+							<lightning-layout-item size="3" padding="around-small" small-device-size="3"
+								medium-device-size="3" large-device-size="2">
+								<!-- <lightning-input type="text" name='four' class='four' max-length='1' onchange={handleOtpInput}>
+									</lightning-input> -->
+								<input style='text-align: center;' type="text" name='four' class='four slds-input' maxlength='1' onkeyup={handleOtpInput}></input>
+							</lightning-layout-item>
+						</lightning-layout>
+					</lightning-layout-item>
+					<lightning-layout-item class='layoutItem' size="6" padding="around-small">
+						<lightning-input type="text" label="First Name" data-id="firstName" name="firstName"
+							onchange={handleInputChange}>
+						</lightning-input>
+					</lightning-layout-item>
+					<lightning-layout-item class='layoutItem' size="6" padding="around-small">
+						<lightning-input class='requiredInput' type="text" label="Last Name" name="lastName" data-id="lastName"
+							onchange={handleInputChange} required>
+						</lightning-input>
+					</lightning-layout-item>
+					<lightning-layout-item class='layoutItem' size="6" padding="around-small">
+						<lightning-input class='requiredInput' type="text" label="Mobile" name="mobile" data-id="mobile"
+							onchange={hanldeMobileChange} required>
+						</lightning-input>
+					</lightning-layout-item>
+					<lightning-layout-item class='layoutItem' size="6" padding="around-small">
+						<lightning-input  type="Email" variant="standard" name="email"
+							label="Email" onchange={handleEmailChange}></lightning-input>
+					</lightning-layout-item>
+					<lightning-layout-item class='layoutItem' size="6" padding="around-small">
+						<lightning-input-field field-name='Company__c'></lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item class='layoutItem' size="6" padding="around-small">
+						<lightning-input-field field-name='Comments__c'></lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" class="slds-hide" padding="around-small">
+						<lightning-input-field field-name='Enquiry_Source__c' value="Web">
+						</lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" class="slds-hide" padding="around-small">
+						<lightning-input-field field-name='Name' value={fullName}>
+						</lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" class="slds-hide" padding="around-small">
+						<lightning-input-field field-name='First_Name__c' value={firstName}></lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" class="slds-hide" padding="around-small">
+						<lightning-input-field field-name='Last_Name__c' value={lastName}></lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" class="slds-hide" padding="around-small">
+						<lightning-input-field type="number" field-name='MobilePhone__c' value={mobile}>
+						</lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" class="slds-hide" padding="around-small">
+						<lightning-input-field field-name='Property__c' value={selectedPropertyId}>
+						</lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" class="slds-hide" padding="around-small">
+						<lightning-input-field field-name='Address__CountryCode__s' value='IN'>
+						</lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item size="6" padding="around-small" class="slds-hide">
+						<lightning-input-field field-name='Email__c' value={enteredEmail}>
+						</lightning-input-field>
+					</lightning-layout-item>
+				</lightning-layout>
+				<lightning-button if:true={showFinalSave} style="float:right;padding:5px;" type="submit" variant="brand"
+					label="Validate"></lightning-button>
+				<lightning-button if:true={showInitialSave} style="float:right;padding:5px;" variant="brand"
+					label="Submit" onclick={handleInitialSubmit}>
+				</lightning-button>
+				<lightning-button if:true={isModalClose} style="float:right;padding:5px;" variant="Natural"
+					label="Cancel" onclick={closeModel}></lightning-button>
+				<lightning-button if:true={isOtpClose} style="float:right;padding:5px;" variant="Natural" label="Back"
+					onclick={closeOtpModal}>
+				</lightning-button>
+			</lightning-record-edit-form>
+		</lightning-quick-action-panel>
+	</template>
+</template>

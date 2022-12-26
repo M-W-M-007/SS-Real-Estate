@@ -1,0 +1,178 @@
+<template>
+	<!-- <lightning-card> -->
+	<div class="slds-card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+		<template if:true={isShowSpinner}>
+			<div class="exampleHolder">
+				<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+			</div>
+		</template>
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="6" padding="around-small" small-device-size="6" medium-device-size="6"
+				large-device-size="2">
+				<lightning-combobox name="city" label="City" placeholder="Select City" options={cityListData}
+					onchange={handleInputChange} value={selectedCity}>
+				</lightning-combobox>
+			</lightning-layout-item>
+			<lightning-layout-item size="6" padding="around-small" small-device-size="6" medium-device-size="6"
+				large-device-size="2">
+				<lightning-combobox name="locality" label="Location" placeholder="Select Location"
+					options={locationListData} onchange={handleInputChange} value={locality}>
+				</lightning-combobox>
+			</lightning-layout-item>
+			<lightning-layout-item size="6" padding="around-small" small-device-size="6" medium-device-size="6"
+				large-device-size="2">
+				<lightning-combobox name="propertyfor" label="Looking For" placeholder="Select Type"
+					options={lookingForListData} onchange={handleInputChange} value={selectedPropertyFor}>
+				</lightning-combobox>
+			</lightning-layout-item>
+			<!-- <lightning-layout-item size="6" padding="around-small" small-device-size="6" medium-device-size="6"
+				large-device-size="2">
+				<lightning-combobox name="project" label="Project" placeholder="Select Project"
+					options={projectListData} onchange={handleInputChange} value={selectedProject}>
+				</lightning-combobox>
+			</lightning-layout-item> -->
+			<lightning-layout-item size="6" padding="around-small" small-device-size="6" medium-device-size="6"
+				large-device-size="2">
+				<lightning-combobox name="type" label="Property Category" placeholder="Select Type" options={propertyCategory}
+					onchange={handleInputChange} value={selectedPropertyTitle}></lightning-combobox>
+			</lightning-layout-item>
+			<lightning-layout-item size="6" padding="around-small" small-device-size="6" medium-device-size="6"
+				large-device-size="2">
+				<c-multi-select-picklist label='Property Type' options={propertyType}
+					placeholder='Select Category' onmultiselectpicklist={hanldeSelectedTypeValue}>
+				</c-multi-select-picklist>
+			</lightning-layout-item>
+			<lightning-layout-item size="6" small-device-size="6" medium-device-size="6" large-device-size="1"
+				padding="around-small">
+				<lightning-combobox name="price" label="Price Range" placeholder="Select Price Range"
+					 options={priceRange} onchange={handleInputChange}
+					value={selectedPriceRange}></lightning-combobox>
+			</lightning-layout-item>
+			<lightning-layout-item size="6" small-device-size="6" medium-device-size="6" large-device-size="1"
+				padding="around-medium" style="margin-top:15px;">
+				<lightning-button style="margin-top:10px;" variant="Brand" label="Apply" title="Apply" onclick={handleApply}></lightning-button>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+	<!-- </lightning-card> -->
+	<template if:true={propertyData} for:each={propertyData} for:item="property">
+		<div key={property} style="padding-top: 10px;">
+			<div class="slds-tabs_card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+				<lightning-card>
+					<lightning-layout multiple-rows>
+						<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+							medium-device-size="6" large-device-size="3">
+							<img if:true={property.imageURL} class='propertyImage' src={property.imageURL} />
+							<img if:false={property.imageURL} class='propertyImage' src={defaultPropertyImgURL} />
+						</lightning-layout-item>
+							<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+								medium-device-size="6" large-device-size="5">
+								<lightning-layout multiple-rows>
+									<lightning-layout-item if:true={property.coast} size="3" padding="horizontal-medium"
+										small-device-size="3" medium-device-size="4" large-device-size="6">
+										<p class='propertyCoast'><b>₹{property.coast}</b></p>
+									</lightning-layout-item>
+									<lightning-layout-item size="9" padding="horizontal-medium" small-device-size="9"
+										medium-device-size="8" large-device-size="6">
+										<p class='propertyCoast'>{property.recordType}</p>
+									</lightning-layout-item>
+									<lightning-layout-item size="12" padding="horizontal-medium" small-device-size="12"
+										medium-device-size="12" large-device-size="12">
+										<p class='propertyName'>{property.Name}</p>
+									</lightning-layout-item>
+									<lightning-layout-item if:true={property.Locality} size="12"
+										padding="horizontal-medium" small-device-size="12" medium-device-size="12"
+										large-device-size="12" class='addressCsss'>
+										<p>{property.Locality.street}, {property.Locality.city}</p>
+									</lightning-layout-item>
+									<lightning-layout-item size="4"
+										padding="horizontal-medium" small-device-size="4" medium-device-size="4"
+										large-device-size="4" if:true={property.propertyId}>
+										<div if:true={property.title} style="border-right:1px solid #a5a5a5;">
+											<p class='headingCss'>Property Id</p>
+											<p class='textColorCSS' >{property.propertyId}</p>
+										</div>
+									</lightning-layout-item>
+									<lightning-layout-item size="4"
+										padding="horizontal-medium" small-device-size="4" medium-device-size="4"
+										large-device-size="4" if:true={property.propertySizeInFt}>
+										<div if:true={property.title} style="border-right:1px solid #a5a5a5;">
+											<p class='headingCss'>Build up Area</p>
+											<p class='textColorCSS' >{property.propertySizeInFt} Sq. Ft.</p>
+										</div>
+										<div if:false={property.title}>
+											<p class='headingCss'>Build up Area</p>
+											<p class='textColorCSS'>{property.propertySizeInFt}</p>
+										</div>
+									</lightning-layout-item>
+									<lightning-layout-item size="4"
+										padding="horizontal-medium" small-device-size="4" medium-device-size="4"
+										large-device-size="4" if:true={property.propertySizeInYards}>
+										<div if:true={property.title} style="border-right:1px solid #a5a5a5;padding:2px">
+											<p class='headingCss'>Build up Area</p>
+											<p class='textColorCSS' >{property.propertySizeInYards} Sq. Yards.</p>
+										</div>
+										<div if:false={property.title}>
+											<p class='headingCss'>Build up Area</p>
+											<p class='textColorCSS'>{property.propertySizeInYards} Sq. Yards.</p>
+										</div>
+									</lightning-layout-item>
+									<lightning-layout-item if:true={property.title} size="4" padding="horizontal-medium"
+										small-device-size="4" medium-device-size="4" large-device-size="4">
+										<div>
+											<p class='headingCss'>Type</p>
+											<p class='textColorCSS'>{property.title}</p>
+										</div>
+									</lightning-layout-item>
+									<lightning-layout-item size="12" padding="horizontal-medium" class='descriptionCss'
+										small-device-size="12" medium-device-size="12" large-device-size="12">
+										<p>{property.Description}</p>
+									</lightning-layout-item>
+								</lightning-layout>
+							</lightning-layout-item>
+							<lightning-layout-item size="4" padding="around-small">
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12">
+										<div style="padding:5px;">
+											<button class="slds-button slds-button_brand btn-height" name={property.Id}
+											onclick={handleViewDetail}>View Details</button>
+										</div>
+									</lightning-layout-item>
+									<lightning-layout-item size="12">
+										<div style="padding:5px;">
+											<button class="slds-button slds-button_neutral btn-height" name={property.Id} data-name={property.Name}
+											onclick={handleEnquiry}>Enquiry</button>
+										</div>
+									</lightning-layout-item>
+								</lightning-layout>
+							</lightning-layout-item>
+					</lightning-layout>
+				</lightning-card>
+			</div>
+		</div>
+	</template>
+	<template if:true={isApplyForEnquiry}>
+		<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+			aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+			<template if:true={isSubmitEnquiry}>
+				<div class="exampleHolder">
+					<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+				</div>
+			</template>
+			<div class="slds-modal__container">
+				<!-- <header class="slds-modal__header"> -->
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+						title="Close" onclick={closeModel}>
+						<lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+							size="small"></lightning-icon>
+						<span class="slds-assistive-text">Close</span>
+					</button>
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+					<c-create-enquiry record-id={selectedPropertyId} property-name={selectedPropertyName} onclose={handleChildComponent}
+						onclosemodel={closeModel} onshowloader={handleLoaderOn} onhideloader={hanldeLoaderOff}></c-create-enquiry>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div> 
+	</template>
+</template>

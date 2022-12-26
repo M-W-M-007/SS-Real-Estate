@@ -1,0 +1,66 @@
+<template>
+<div if:false={isDesktopScreen} class="slds-text-align_right slds-p-top_medium">
+        <span if:true={noDataFound}>
+            <span class="slds-p-around_xx-small">
+                <lightning-button title="Previous" icon-name="utility:chevronleft" onclick={previousSlide}
+                disabled={disablePreviousButton}></lightning-button>
+            </span>
+            <span>
+                <lightning-button title="Next" icon-name="utility:chevronright" onclick={nextSlide}
+                disabled={disableNextButton}></lightning-button>
+            </span>
+        </span>
+    </div>
+
+    <!-- this button only for desktop view -->
+    <div class={sldsGrid}>
+        <div if:true={isDesktopScreen}
+            class="slds-col slds-small-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-align-middle" style="text-align:center;" >
+            <span if:true={noDataFound}>
+                <lightning-button title="Previous" icon-name="utility:chevronleft" onclick={previousSlide}
+                    disabled={disablePreviousButton}
+                ></lightning-button>
+            </Span>
+        </div>
+        <div class="slds-col slds-small-size_1-of-12 slds-medium-size_10-of-12 slds-large-size_10-of-12 ">
+            <div class="slds-carousel">
+                <div class="slds-carousel__stage">
+                    <div class="slds-carousel__panels" style={transitionStyle}>
+                        <template if:true={relatedProductListOfList} for:each={relatedProductListOfList} for:item="element">
+                            <div key={element} class="slds-carousel__panel" role="tabpanel">
+                                
+                                <lightning-layout>
+                                    <template if:true={element} for:each={element} for:item="product" for:index="index">
+                                        <lightning-layout-item key={product.url} size={cmpSize} class="slds-p-horizontal_xx-small"
+                                            small-device-size="12" medium-device-size="12" large-device-size={largeDeviceSize}>
+                                            <!-- <div key={product.Id} class="slds-m-horizontal_small"> -->
+                                            <div key={product.url} style="text-align:-webkit-center" >
+                                                <div style="cursor:pointer" data-product-id={product.Id}
+                                                    onclick={navigationToProductDetail} class={customBoxCSSClass}>
+                                                    <!--product images-->
+                                                    <div class="slds-align_absolute-center">
+                                                        <img if:true={product.url} src={product.url}
+                                                            style="object-fit: contain; height: 10rem; width: 10rem;"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- this button only for desktop view -->
+        <div if:true={isDesktopScreen}
+            class="slds-col slds-small-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12 slds-align-middle" style="text-align:center;">
+            <span if:true={noDataFound}>
+                <lightning-button title="Next" icon-name="utility:chevronright" onclick={nextSlide}
+                disabled={disableNextButton}
+                ></lightning-button>
+            </span>
+        </div>
+    </div>
+</template>

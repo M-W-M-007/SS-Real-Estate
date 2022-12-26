@@ -1,0 +1,21 @@
+.container {
+    position: relative !important;
+}
+
+.drop-down-list {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
+.label-cls{
+    margin-left: -2px;
+}
+.input-cls{
+    width: 100%;
+    margin-left: -10px;
+    max-width: 100%;
+    margin-left: -2px;
+}
+.icon-cls{
+    margin-left: 1px;
+}

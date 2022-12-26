@@ -1,0 +1,4 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" >
+	<aura:attribute name="recordId" type="Id" />
+    <c:createEnquiry recordId="{!v.recordId}" onclose="{!c.closeAction}" onclosemodel="{!c.closeAction}"></c:createEnquiry>
+</aura:component>

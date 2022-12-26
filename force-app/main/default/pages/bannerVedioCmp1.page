@@ -1,0 +1,67 @@
+<apex:page showHeader="false" docType="html-5.0" >
+  <style>
+.header_video {
+   
+    min-width: 100%;
+    min-height: 60%;
+   
+    z-index: 1;
+    width: auto;
+    height: auto;
+  
+ 
+   
+    transition: 1s opacity;
+    object-position: center center;
+    object-fit: cover;
+}
+
+.heading_over_video_wrapper {
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+
+.heading_over_video, .heading_over_image {
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgb(68 68 68 / 50%);
+    font-size: 46px;
+    font-size: 60px;
+    font-weight: 800;
+    margin-top: 0px;
+    letter-spacing: -.02em;
+    line-height: 1.07; 
+    font-family:"PRATA";
+    padding-left: 210px;
+}
+.subheading_over_video, .subheading_over_image {
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgb(68 68 68 / 25%);
+    font-weight: 400;
+    font-size: 21px;
+    font-size: 18px;
+    line-height: 21px;
+    line-height: 1.5;
+    padding-bottom:0px;
+}
+</style>
+<div class="slds-size_12-of-12 slds-large-size_3-of-12 slds-medium-size_6-of-12">
+<div class="header_media with_search_4 header_media_non_elementor">
+    <div class="wpestate_header_video full_screen_no parallax_effect_yes" style="/* height:700px; */">
+    <video id="hero-vid" width="100%" height="60%" autoplay="autoplay" playsinline="" muted="muted" loop="loop">
+        <source src="https://sukh-sampatti.my.site.com/resource/vedio" type="video/mp4">
+        <source src="" type="video/webm"></source>
+        <source src="" type="video/ogg"/></source>
+    </video>
+       
+        </div>
+   </div>
+ </div>
+</apex:page>

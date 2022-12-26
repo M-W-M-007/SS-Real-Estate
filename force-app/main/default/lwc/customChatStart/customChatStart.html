@@ -1,0 +1,31 @@
+<template>
+	<div class="chat-footer slds-hide chatBox" style="z-index:9999">
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6"
+				large-device-size="3">
+				<div class="custom-box"></div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6"
+				large-device-size="3">
+				<div class="custom-box"></div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6"
+				large-device-size="3">
+				<div class="custom-box"></div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" if:true={isShowChatBoat} padding="around-small" small-device-size="3"
+				medium-device-size="6" large-device-size="3">
+				<div class="custombox">
+					<c-custom-chat-boat onclosechat={closeChatBox} onfinishchat={handleFinishChat}></c-custom-chat-boat>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+
+	</div>
+	<div class="chat-footer slds-p-around_small" if:true={isShowStart}>
+		<div>
+			<lightning-icon size="large" icon-name="standard:bot" onclick={handleStart}></lightning-icon>
+			<p>May I <br/>Help You</p>
+		</div>
+	</div>
+</template>

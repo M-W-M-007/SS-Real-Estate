@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="language">
+    <head>
+        <meta name="lwr-revised" content="238.0" />
+        <script type="text/javascript">
+            function launchModal(_ref){var id=_ref.id,titleLabel=_ref.titleLabel,contentLabel=_ref.contentLabel,buttonLabel=_ref.buttonLabel,callback=_ref.callback;var modalTemplate="<div id=\"".concat(id,"\">\n          <section\n          role=\"alertdialog\"\n          tabindex=\"-1\"\n          aria-labelledby=\"prompt-heading-id\"\n          aria-describedby=\"prompt-message-wrapper\"\n          class=\"slds-modal slds-fade-in-open slds-modal_prompt\"\n          aria-modal=\"true\"\n          style=\"color: rgb(62, 62, 60)\"\n          >\n              <div class=\"slds-modal__container\">\n                  <header class=\"slds-modal__header slds-theme_info slds-theme_alert-texture\">\n                      <h2 class=\"slds-text-heading_medium\">").concat(titleLabel,"</h2>\n                  </header>\n                  <div class=\"slds-modal__content slds-p-around_medium\">\n                      <p id=\"prompt-message-id\">").concat(contentLabel,"</p>\n                  </div>\n                  <footer class=\"slds-modal__footer slds-theme_default\">\n                      <button class=\"slds-button slds-button_neutral js-button\">").concat(buttonLabel,"</button>\n                  </footer>\n              </div>\n          </section>\n          <div class=\"slds-backdrop slds-backdrop_open\"></div>\n      </div>");var div=document.createElement("div");div.innerHTML=modalTemplate;div.querySelector(".js-button").addEventListener("click",callback);if(!document.body){document.createElement("body")}document.body.appendChild(div.querySelector("#".concat(id)))}window.onload=function(){if(!window.isBrowserSupportedByWebruntime){var WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID="webruntime-browser-not-supported-message";launchModal({id:WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID,titleLabel:"Your browser isn't supported",contentLabel:"Your browser doesn\u2019t support some features on this site. For the best experience, update your browser to the latest version, or switch to another browser.",buttonLabel:"Got It",callback:function callback(){var modal=document.querySelector("#".concat(WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID));document.body.removeChild(modal)}})}};window.document.addEventListener("client-error",function(error){if(error.detail.type==="FAILED_TO_LOAD_RESOURCE"){launchModal({id:"webruntime-client-error-failed-to-load-resource",titleLabel:"Oops!",contentLabel:"Something went wrong. Please try refreshing the app",buttonLabel:"Refresh",callback:function callback(){var url=new URL(window.location);url.searchParams.set("lwr.cachebust",new Date().getTime());window.location=url.href}})}else if(error.detail.type==="TOO_MANY_REQUESTS"){window.document.cookie="TooManyRequests=true;max-age=30;";window.location.reload()}});
+        </script>
+        
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">!function(){const e={documentCreateElement:Document.prototype.createElement,elementSetAttribute:Element.prototype.setAttribute,elementAttachShadow:Element.prototype.attachShadow,elementAppendChild:Element.prototype.appendChild,htmlelementAddEventListener:Element.prototype.addEventListener,iframeContentDocumentGet:Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype,"contentDocument").get,iframeContentWindowGet:Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype,"contentWindow").get};Object.freeze(e),Object.defineProperty(window,"originalDomApis",{writable:!1,value:e});const t=window.frames;Object.defineProperty(window,"frames",{get:function(){const e=[];for(let n=0;n<t.length;n++)try{t[n].frameElement.getRootNode().nodeType===Node.DOCUMENT_FRAGMENT_NODE||e.push(t[n])}catch(o){e.push(t[n])}return e.length===t.length?t:e}})}();</script>
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">!function(){"use strict";window.isBrowserSupportedByWebruntime=function(){const n="performance"in window&&"mark"in window.performance,e="customElements"in window;return n&&e}()}();
+</script>
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">globalThis.LWR = globalThis.LWR || {};
+globalThis.LWR.customInit = (lwr) => {
+
+        LWR.define('@app/apexApiBasePath', [], function() { return "webruntime/api"; });
+        LWR.define('@app/apiBasePath', [], function() { return "webruntime/api"; });
+        LWR.define('@app/basePath', [], function() { return ""; });
+        LWR.define('@app/brandingProperties', [], function() { return {"--dxp-g-brand":"rgb(9, 88, 89)","--dxp-c-link-text-color":"#111111","--dxp-c-link-text-color-hover":"#000000","--dxp-c-link-text-color-active":"#000000","--dxp-g-neutral-contrast-3":"#fff","--dxp-s-body-font-family":"Montserrat","--dxp-g-neutral-contrast-2":"#000","--dxp-g-neutral":"#ecebea","--dxp-g-neutral-contrast-1":"#000","--dxp-g-root":"rgb(246, 249, 254)","--dxp-g-root-contrast-1":"rgba(0, 0, 0, 0.8)","--dxp-g-root-contrast":"rgba(0, 0, 0, 0.8)","--dxp-g-root-contrast-2":"rgba(0, 0, 0, 0.8)","--dxp-g-root-contrast-3":"rgba(0, 0, 0, 0.8)","--dxp-g-neutral-contrast":"#000","--dxp-g-root-1":"rgb(209, 224, 250)","--dxp-g-root-2":"rgb(136, 176, 242)","--dxp-g-root-3":"rgb(26, 102, 229)","--dxp-g-brand-contrast-1":"rgb(255, 255, 255)","--dxp-g-brand-contrast":"#FFFFFF","--dxp-g-neutral-3":"rgb(118, 113, 107)","--dxp-g-neutral-2":"rgb(178, 174, 170)","--dxp-g-brand-contrast-3":"rgb(255, 255, 255)","--dxp-g-sna-heading-font-family":"Montserrat","--dxp-g-brand-contrast-2":"rgb(255, 255, 255)","--dxp-g-neutral-1":"rgb(217, 215, 213)","--dxp-g-brand-1":"rgb(5, 51, 52)","--dxp-g-brand-2":"rgb(0, 0, 0)","--dxp-g-brand-3":"rgb(0, 0, 0)"}; });
+        LWR.define('@app/guestUuidCookieName', [], function() { return null; });
+        LWR.define('@app/isDesignMode', [], function() { return false; });
+        LWR.define('@app/isPreviewMode', [], function() { return false; });
+        LWR.define('@app/publicApiBasePath', [], function() { return "webruntime/api/public"; });
+        LWR.define('@app/routes', [], function() { return [{"label":"Service Not Available","isPublic":true,"viewId":"498d8929-7867-4488-b27e-c0a1b1c198a6","hasVanityURL":false,"patterns":["\\/service-not-available\\/?"],"id":"83944922-8ab7-4ad6-ae4b-6db2fc03c4d1","path":"/maintenance.html","view":"service_Not_Available","isRoot":true,"isDefault":true,"page":{"type":"comm__namedPage","attributes":{"name":"Service_Not_Available"}}}]; });
+        LWR.define('@app/viewToThemeLayoutMap', [], function() { return {"service_Not_Available":"serviceNotAvailable"}; });
+        LWR.define('@salesforce/i18n/lang', [], function() { return "en_US"; });
+        LWR.define('@salesforce/site/Id', [], function() { return "0DM5g000000QWm6GAG"; });
+lwr.initializeApp();
+globalThis.process = { env: { NODE_ENV: "dev" } };};</script>
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">globalThis.LWR = globalThis.LWR || {};
+Object.assign(globalThis.LWR, {
+  "bootstrapModule": "@lwrjs/app-service/communities_app/module/amd/v/0_7_4",
+  "autoBoot": false,
+  "rootComponents": [
+    "webruntime/app/v/1"
+  ],
+  "requiredModules": [
+    "lwc/v/2_20_2",
+    "@lwrjs/app-service/communities_app/module/amd/v/0_7_4"
+  ],
+  "importMappings": {
+    "default": "webruntime/component/latest/prod/en_US/",
+    "imports": {
+      "/webruntime/component/latest/prod/en_US/lwc": "webruntime/framework/007bab7497/prod/lwr_lwc",
+      "@app/csrfToken": "webruntime/module/@app/csrfToken",
+      "@app/user": "webruntime/module/@app/user",
+      "@perm/": "webruntime/perm/",
+      "@salesforce/client/formFactor": "webruntime/module/@salesforce/client/formFactor",
+      "@salesforce/user/Id": "webruntime/module/@salesforce/user/Id",
+      "@salesforce/user/isGuest": "webruntime/module/@salesforce/user/isGuest",
+      "@salesforce/userPermission/": "webruntime/perm/",
+      "@view/serviceNotAvailable": "webruntime/view/1caf97ec72/prod/en_US/serviceNotAvailable",
+      "@view/service_Not_Available": "webruntime/view/19e9f0d778/prod/en_US/service_Not_Available",
+      "mobileruntime/hybridAppManager": "webruntime/framework/584e480401/prod/lwr_mobile"
+    }
+  }
+});</script>
+        <script src="webruntime/framework/4de9cd860e/prod/lwr_loader"></script>
+        <script src="webruntime/framework/e9b92effeb/prod/lwr_bootstrap"></script>
+        <script src="webruntime/framework/007bab7497/prod/lwr_lwc"></script>
+        <script src="webruntime/framework/67e3f49222/prod/lwr_app"></script>
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">LWR.define('lwc', ['lwc/v/2_20_2'], function(module) { return module; });</script>
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">
+        LWR.define('@app/authenticationCookieName', [], function() { return "__Secure-has-sid"; });
+        LWR.define('@app/isMobileAppMode', [], function() { return false; });
+        LWR.define('@app/loginPath', [], function() { return null; });
+        LWR.define('@app/user', [], function() { return {"isGuest":true,"id":null,"csrfToken":null}; });
+        LWR.define('@salesforce/community/basePath', [], function() { return ""; });</script>
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">LWR.define('@app/csrfToken/v/1', ['@app/csrfToken'], function(module) { return module; });</script>
+        <script type="text/javascript" nonce="4671ec71-481b-4b3c-8b10-bc1639beaa2a">LWR.define('@app/user/v/1', ['@app/user'], function(module) { return module; });</script>
+        <script src="webruntime/view/19e9f0d778/prod/en_US/service_Not_Available"></script>
+        <script src="webruntime/view/1caf97ec72/prod/en_US/serviceNotAvailable"></script>
+        <link rel="icon" 
+      type="image/png" 
+      href="https://sukh-sampatti.my.site.com/resource/SukhSampattiIcon"/>
+<meta name="keywords" content="Sukh Sampatti, Sukh Sampatti Ajmer, Properties in Ajmer, Real Estate, Ajmer Property Dealer, Buying Selling Renting, Office, Land, House, Flats in Ajmer,Property Dealer in Ajmer "/>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="Sukh Sampatti help you with all your Real Estate needs, whether you’re hoping to buy or sell a new home, Office, land or any other real estate property."/>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script src="https://kit.fontawesome.com/e844ca529e.js" crossorigin="anonymous"></script>
+
+<script>
+
+
+
+   var container;
+   var slider;
+   var slides;
+   var buttons;
+   var currentPosition;
+   var currentMargin;
+   var slidesPerPage;
+   var slidesCount;
+   var containerWidth;
+   var prevKeyActive;
+   var nextKeyActive;
+  
+    window.addEventListener("resize", checkWidth);
+  
+   //window.addEventListener("load" , setParams);
+
+   const myInterval = setInterval(function () {
+       console.log('page ' , window.location.pathname.includes('about'));
+       if(window.location.pathname.includes('about') || true){
+          
+           console.log('IF ...');
+           console.log("right element ", document.getElementById('leftshift'));
+           if(document.getElementById('leftshift')){
+               container = document.getElementById('container')
+               slider = document.getElementById('slider');
+               slides = document.getElementsByClassName('slide').length;
+               console.log("slides length ", slides);
+               console.log("slider ", slider);
+               buttons = document.getElementsByClassName('btn');
+               currentPosition = 0;
+               currentMargin = 0;
+               slidesPerPage = 0;
+               slidesCount = slides - slidesPerPage;
+               containerWidth = container.offsetWidth;
+               prevKeyActive = false;
+               nextKeyActive = true;
+               setParams();
+              clearInterval(myInterval);
+               console.log("slidesCount  ", slidesCount);
+               document.getElementById('leftshift').addEventListener("click", slideLeft);
+           }
+          
+           if(document.getElementById('rightshift')){
+               document.getElementById('rightshift').addEventListener("click", slideRight);
+           }        
+       }
+   }, 1000);
+
+  
+function autoplay(){
+       const myInterval = setInterval(function () {
+
+           if(currentPosition == slides/2){
+               clearInterval(myInterval);
+           }
+           slideLeft();
+
+           console.log(slidesCount , slides);
+
+       }, 3000)
+}
+
+
+   function checkWidth() {
+       containerWidth = container.offsetWidth;
+       setParams(containerWidth);
+   }
+
+   function setParams(w) {
+       console.log('called setparams' , w);
+  
+           if (w < 551) {
+               slidesPerPage = 1;
+           } else {
+               if (w < 901) {
+                   slidesPerPage = 2;
+               } else {
+                   if (w < 1101) {
+                       slidesPerPage = 3;
+                   } else {
+                       slidesPerPage = 4;
+                   }
+               }
+           }
+       slidesCount = slides - slidesPerPage;
+       if (currentPosition > slidesCount) {
+           currentPosition -= slidesPerPage;
+       };
+       currentMargin = - currentPosition * (100 / slidesPerPage);
+       console.log('slider ' , slider);
+       slider.style.marginLeft = currentMargin + '%';
+       if (currentPosition > 0) {
+           buttons[0].classList.remove('inactive');
+       }
+       if (currentPosition < slidesCount) {
+           buttons[1].classList.remove('inactive');
+       }
+       if (currentPosition >= slidesCount) {
+           buttons[1].classList.add('inactive');
+       }
+       if(currentPosition == 0){
+autoplay();
+}
+    }
+
+  
+
+   function slideRight() {
+         console.log('slideRight');
+       console.log('**');
+       if (currentPosition != 0) {
+           slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
+           currentMargin += (100 / slidesPerPage);
+           currentPosition--;
+       };
+       if (currentPosition === 0) {
+           buttons[0].classList.remove('inactive');
+       }
+       if (currentPosition < slidesCount) {
+           buttons[1].classList.remove('inactive');
+       }
+      /* if(currentPosition == 0){
+           console.log('checking code');
+autoplay();
+}*/
+   };
+
+   function slideLeft() {
+       console.log('slideleft');
+       console.log('abcd');console.log('currentPosition',currentPosition);console.log('slidesCount',slidesCount);
+       console.log('slidesPerPage ' , slidesPerPage);
+       if (currentPosition != slidesCount) {
+
+           slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
+           currentMargin -= (100 / slidesPerPage);
+           console.log('currentMargin',currentMargin);
+           currentPosition++;
+           console.log('currentPosition',currentPosition);
+       };
+      
+       if(currentPosition == 0){
+autoplay();
+}
+      
+       if (currentPosition == slidesCount) {
+           buttons[1].classList.remove('inactive');
+       }
+      
+   };
+
+
+</script>
+<script>
+
+
+
+   var container2;
+   var slider2;
+   var slides2;
+   var buttons2;
+   var currentPosition2;
+   var currentMargin2;
+   var slidesPerPage2;
+   var slidesCount2;
+   var containerWidth2;
+   var prevKeyActive2;
+   var nextKeyActive2;
+  
+    window.addEventListener("resize", checkWidth2);
+  
+   //window.addEventListener("load" , setParams);
+
+   const myInterval2 = setInterval(function () {
+       console.log('page ' , window.location.pathname.includes('about'));
+       if(window.location.pathname.includes('about') || true){
+          
+           console.log('IF ...');
+           console.log("right element ", document.getElementById('leftshift2'));
+           if(document.getElementById('leftshift2')){
+               container2 = document.getElementById('container2')
+               slider2 = document.getElementById('slider2');
+               slides2 = document.getElementsByClassName('slide2').length;
+               console.log("slides length ", slides2);
+               console.log("slider ", slider2);
+               buttons2 = document.getElementsByClassName('btn2');
+               currentPosition2 = 0;
+               currentMargin2 = 0;
+               slidesPerPage2 = 0;
+               slidesCount2 = slides2 - slidesPerPage2;
+               containerWidth2 = container2.offsetWidth;
+               prevKeyActive2 = false;
+               nextKeyActive2 = true;
+               setParams2();
+              clearInterval(myInterval2);
+               console.log("slidesCount  ", slidesCount2);
+               document.getElementById('leftshift2').addEventListener("click", slideLeft2);
+           }
+          
+           if(document.getElementById('rightshift2')){
+               document.getElementById('rightshift2').addEventListener("click", slideRight2);
+           }        
+       }
+   }, 1000);
+
+  
+function autoplay2(){
+       const myInterval2 = setInterval(function () {
+
+           if(currentPosition2 == slides2/2){
+               clearInterval(myInterval2);
+           }
+           slideLeft2();
+
+           console.log(slidesCount2 , slides2);
+
+       }, 3000)
+}
+
+
+   function checkWidth2() {
+       containerWidth2 = container2.offsetWidth;
+       setParams2(containerWidth2);
+   }
+
+   function setParams2(w2) {
+       console.log('called setparams' , w2);
+  
+           if (w2 < 551) {
+               slidesPerPage2 = 1;
+           } else {
+               if (w2 < 901) {
+                   slidesPerPage2 = 2;
+               } else {
+                   if (w2 < 1101) {
+                       slidesPerPage2 = 3;
+                   } else {
+                       slidesPerPage2 = 4;
+                   }
+               }
+           }
+       slidesCount2 = slides2 - slidesPerPage2;
+       if (currentPosition2 > slidesCount2) {
+           currentPosition2 -= slidesPerPage2;
+       };
+       currentMargin2 = - currentPosition2 * (100 / slidesPerPage2);
+       console.log('slider ' , slider2);
+       slider2.style.marginLeft = currentMargin2 + '%';
+       if (currentPosition2 > 0) {
+           buttons2[0].classList.remove('inactive');
+       }
+       if (currentPosition2 < slidesCount2) {
+           buttons2[1].classList.remove('inactive');
+       }
+       if (currentPosition2 >= slidesCount2) {
+           buttons2[1].classList.add('inactive');
+       }
+       if(currentPosition2 == 0){
+			autoplay2();
+		}
+    }
+
+  
+
+   function slideRight2() {
+         console.log('slideRight2');
+       console.log('**');
+       if (currentPosition2 != 0) {
+           slider2.style.marginLeft = currentMargin2 + (100 / slidesPerPage2) + '%';
+           currentMargin2 += (100 / slidesPerPage2);
+           currentPosition2--;
+       };
+       if (currentPosition2 === 0) {
+           buttons2[0].classList.remove('inactive');
+       }
+       if (currentPosition2 < slidesCount2) {
+           buttons2[1].classList.remove('inactive');
+       }
+      /* if(currentPosition == 0){
+           console.log('checking code');
+autoplay();
+}*/
+   };
+
+   function slideLeft2() {
+       console.log('slideleft2');
+       console.log('abcd');console.log('currentPosition',currentPosition2);console.log('slidesCount',slidesCount2);
+       console.log('slidesPerPage ' , slidesPerPage2);
+       if (currentPosition2 != slidesCount2) {
+
+           slider2.style.marginLeft = currentMargin2 - (100 / slidesPerPage2) + '%';
+           currentMargin2 -= (100 / slidesPerPage2);
+           console.log('currentMargin2',currentMargin2);
+           currentPosition2++;
+           console.log('currentPosition2',currentPosition2);
+       };
+      
+       if(currentPosition2 == 0){
+			autoplay2();
+		}
+      
+       if (currentPosition2 == slidesCount2) {
+           buttons2[1].classList.remove('inactive');
+       }
+      
+   };
+
+
+</script><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Service Not Available</title>
+
+<link rel="stylesheet" href="assets/styles/styles.css?0DB5g0000008Xrd:529" />
+
+<!-- webruntime-branding-shared stylesheets -->
+<link rel="stylesheet" href="assets/styles/salesforce-lightning-design-system.min.css?0DB5g0000008Xrd:529" />
+<link rel="stylesheet" href="assets/styles/dxp-site-spacing-styling-hooks.min.css?0DB5g0000008Xrd:529" />
+<link rel="stylesheet" href="assets/styles/dxp-styling-hooks.min.css?0DB5g0000008Xrd:529" />
+<link rel="stylesheet" href="assets/styles/dxp-slds-extensions.min.css?0DB5g0000008Xrd:529" />
+
+
+<!-- webruntime-branding-shared stylesheets -->
+        <link rel="stylesheet" href="assets/styles/overrides.css?0DB5g0000008Xrd:529" />
+        <link rel="stylesheet" href="assets/css/fonts-and-custom.css?0DB5g0000008Xrd:529" />
+    </head>
+    <body>
+        <div id="webruntime-browser-not-supported-message" style="display: none;">
+            <section
+                role="alertdialog"
+                tabindex="-1"
+                aria-labelledby="prompt-heading-id"
+                aria-describedby="prompt-message-wrapper"
+                class="slds-modal slds-fade-in-open slds-modal_prompt"
+                aria-modal="true"
+                style="color: rgb(62, 62, 60);"
+            >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header slds-theme_info slds-theme_alert-texture">
+                    <h2 class="slds-text-heading_medium" id="prompt-heading-id">
+                        Your browser isn't supported
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="prompt-message-wrapper">
+                    <p>
+                        Your browser doesn’t support some features on this site. For the best
+                        experience, update your browser to the latest version, or switch to another
+                        browser.
+                    </p>
+                </div>
+                <footer class="slds-modal__footer slds-theme_default">
+                    <button class="slds-button slds-button_neutral">Got It</button>
+                </footer>
+            </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+        <script type="text/javascript">
+            function displayBrowserUnsupportedModalIfNeeded() {
+                if (!window.isBrowserSupportedByWebruntime) {
+                    var WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID = 'webruntime-browser-not-supported-message';
+                    var modal = document.getElementById(WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID);
+                    if (modal) {
+                        modal.style.display = '';
+                        var okButton = document.querySelector(
+                            '#' + WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID + ' ' + '.slds-button'
+                        );
+                        okButton.addEventListener('click', function() {
+                            var modal = document.getElementById(WEBRUNTIME_UNSUPPORTED_BROWSER_MODAL_ID);
+                            if (modal) {
+                                document.body.removeChild(modal);
+                            }
+                        });
+                    }
+                }
+            }
+            displayBrowserUnsupportedModalIfNeeded();
+        </script>
+        <webruntime-app></webruntime-app>
+    </body>
+</html>

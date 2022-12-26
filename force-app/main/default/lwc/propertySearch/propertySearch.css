@@ -1,0 +1,44 @@
+.propertyName{
+    font-size: 20px;
+}
+.propertyImage{
+	border-radius: 10px;
+	max-width: 85%;
+    max-height: 90%;
+    height: 200px;
+    width: 480px;
+}
+.applyButton{
+	margin-top: 35px;
+}
+.propertyCoast{
+	font-size: 20px;
+    margin-bottom: 15px;
+}
+.borderCss{
+	border-right: 1px solid;
+    height: 40px;
+	color:#a5a5a5;
+}
+.addressCsss{
+	margin-bottom: 20px;
+}
+.descriptionCss{
+	margin-top: 4%;
+}
+.headingCss{
+	color:#a5a5a5;
+	font-size: 15px;
+	font-family: revert;
+}
+lightning-button.enquiry-btn .slds-button{
+    width: 103px;
+}
+.textColorCSS{
+	color:black;
+	font-size: 12px;
+    padding: 3px;
+}
+.btn-height{
+	width:7.5rem;
+}

@@ -1,0 +1,19 @@
+<template>
+    <lightning-record-view-form
+        record-id={recId}
+        object-api-name="Property__c"
+    >
+        <div class="slds-box">
+            <lightning-output-field field-name="Name"> </lightning-output-field>
+            <lightning-output-field field-name="Description__c">
+            </lightning-output-field>
+            <lightning-button if:true={recId} label="View Details" onclick={openRecord}></lightning-button>
+        </div>
+    </lightning-record-view-form>
+    <template if:true={files} for:each={files} for:item="file">
+        <lightning-card key={file}>
+            <img src={file} width="100%"/>
+        </lightning-card>
+        
+    </template>
+</template>
