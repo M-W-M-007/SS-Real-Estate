@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Current_Org_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Current Org Link</shortDescription>
+        <value>https://sukh-sampatti.lightning.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Enquiry_Recipient_Manager_Email</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Enquiry Recipient Manager Email</shortDescription>
+        <value>waz.scibot@outlook.com</value>
+    </labels>
+    <labels>
+        <fullName>Enquiry_Recipient_Staff_Email</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Enquiry Recipient Staff Email</shortDescription>
+        <value>rizwan.a@ibirdsservices.com</value>
+    </labels>
+    <labels>
+        <fullName>PROFILE_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PROFILE ID</shortDescription>
+        <value>00e5g000005gBw9AAE</value>
+    </labels>
+    <labels>
+        <fullName>SukhSampatiURL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SukhSampatiURL</shortDescription>
+        <value>https://ibirds39-dev-ed.develop.lightning.force.com</value>
+    </labels>
+</CustomLabels>

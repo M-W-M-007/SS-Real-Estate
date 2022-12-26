@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Paid_Commission</fullName>
+    <columns>NAME</columns>
+    <columns>Purchased_Property__c</columns>
+    <columns>Staff__c</columns>
+    <columns>Amount__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Payment_Status__c</field>
+        <operation>equals</operation>
+        <value>Paid</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Commission</value>
+    </filters>
+    <label>All Paid Commission</label>
+</ListView>

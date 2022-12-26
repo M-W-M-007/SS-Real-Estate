@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Project Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dynasty</fullName>
+                <default>false</default>
+                <label>Dynasty</label>
+            </value>
+            <value>
+                <fullName>Astitva</fullName>
+                <default>false</default>
+                <label>Astitva</label>
+            </value>
+            <value>
+                <fullName>Rangoli Ashiyana</fullName>
+                <default>false</default>
+                <label>Rangoli Ashiyana</label>
+            </value>
+            <value>
+                <fullName>Vatika</fullName>
+                <default>false</default>
+                <label>Vatika</label>
+            </value>
+            <value>
+                <fullName>Shir Pinnacle</fullName>
+                <default>false</default>
+                <label>Shir Pinnacle</label>
+            </value>
+            <value>
+                <fullName>Hills Ajmer</fullName>
+                <default>false</default>
+                <label>Hills Ajmer</label>
+            </value>
+            <value>
+                <fullName>Chandrakala Vihar</fullName>
+                <default>false</default>
+                <label>Chandrakala Vihar</label>
+            </value>
+            <value>
+                <fullName>Saarth Pratham</fullName>
+                <default>false</default>
+                <label>Saarth Pratham</label>
+            </value>
+            <value>
+                <fullName>Sky Tower</fullName>
+                <default>false</default>
+                <label>Sky Tower</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

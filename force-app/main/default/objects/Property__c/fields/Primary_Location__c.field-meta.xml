@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Location__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>City__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adarsh Nagar</fullName>
+                <default>false</default>
+                <label>Adarsh Nagar</label>
+            </value>
+            <value>
+                <fullName>Ajay Nagar</fullName>
+                <default>false</default>
+                <label>Ajay Nagar</label>
+            </value>
+            <value>
+                <fullName>Agra gate</fullName>
+                <default>false</default>
+                <label>Agra gate</label>
+            </value>
+            <value>
+                <fullName>Anasagar Link Road</fullName>
+                <default>false</default>
+                <label>Anasagar Link Road</label>
+            </value>
+            <value>
+                <fullName>Ansal City, Main Sikar Road</fullName>
+                <default>false</default>
+                <label>Ansal City, Main Sikar Road</label>
+            </value>
+            <value>
+                <fullName>Bhagwanpura</fullName>
+                <default>false</default>
+                <label>Bhagwanpura</label>
+            </value>
+            <value>
+                <fullName>Boraj</fullName>
+                <default>false</default>
+                <label>Boraj</label>
+            </value>
+            <value>
+                <fullName>Civil Lines</fullName>
+                <default>false</default>
+                <label>Civil LInes</label>
+            </value>
+            <value>
+                <fullName>Chahchiyawas</fullName>
+                <default>false</default>
+                <label>Chahchiyawas</label>
+            </value>
+            <value>
+                <fullName>Chandravardai</fullName>
+                <default>false</default>
+                <label>Chandravardai</label>
+            </value>
+            <value>
+                <fullName>Dargah Baazar</fullName>
+                <default>false</default>
+                <label>Dargah Baazar</label>
+            </value>
+            <value>
+                <fullName>Foysagar Road</fullName>
+                <default>false</default>
+                <label>Foysagar Road</label>
+            </value>
+            <value>
+                <fullName>Gagwana</fullName>
+                <default>false</default>
+                <label>Gagwana</label>
+            </value>
+            <value>
+                <fullName>Ganj</fullName>
+                <default>false</default>
+                <label>Ganj</label>
+            </value>
+            <value>
+                <fullName>Gulab Bari</fullName>
+                <default>false</default>
+                <label>Gulab Bari</label>
+            </value>
+            <value>
+                <fullName>Hari Bhau Upadhyay Nagar</fullName>
+                <default>false</default>
+                <label>Hari Bhau Upadhyay Nagar</label>
+            </value>
+            <value>
+                <fullName>Hathi Khera</fullName>
+                <default>false</default>
+                <label>Hathi Khera</label>
+            </value>
+            <value>
+                <fullName>Honkra</fullName>
+                <default>false</default>
+                <label>Honkra</label>
+            </value>
+            <value>
+                <fullName>Jaipur Road</fullName>
+                <default>false</default>
+                <label>Jaipur Road</label>
+            </value>
+            <value>
+                <fullName>Kotra</fullName>
+                <default>false</default>
+                <label>Kotra</label>
+            </value>
+            <value>
+                <fullName>Kayad</fullName>
+                <default>false</default>
+                <label>Kayad</label>
+            </value>
+            <value>
+                <fullName>Kesar Ganj</fullName>
+                <default>false</default>
+                <label>Kesar Ganj</label>
+            </value>
+            <value>
+                <fullName>Kharkheri</fullName>
+                <default>false</default>
+                <label>Kharkheri</label>
+            </value>
+            <value>
+                <fullName>Kundan Nagar</fullName>
+                <default>false</default>
+                <label>Kundan Nagar</label>
+            </value>
+            <value>
+                <fullName>Ladpura</fullName>
+                <default>false</default>
+                <label>Ladpura</label>
+            </value>
+            <value>
+                <fullName>Lohagal</fullName>
+                <default>false</default>
+                <label>Lohagal</label>
+            </value>
+            <value>
+                <fullName>Madar Gate</fullName>
+                <default>false</default>
+                <label>Madar Gate</label>
+            </value>
+            <value>
+                <fullName>Maharana Pratap Nagar</fullName>
+                <default>false</default>
+                <label>Maharana Pratap Nagar</label>
+            </value>
+            <value>
+                <fullName>Makadwali</fullName>
+                <default>false</default>
+                <label>Makadwali</label>
+            </value>
+            <value>
+                <fullName>Mansarovar</fullName>
+                <default>false</default>
+                <label>Mansarovar</label>
+            </value>
+            <value>
+                <fullName>Motipura, Khadwasa</fullName>
+                <default>false</default>
+                <label>Motipura, Khadwasa</label>
+            </value>
+            <value>
+                <fullName>Motisar</fullName>
+                <default>false</default>
+                <label>Motisar</label>
+            </value>
+            <value>
+                <fullName>Narwar Village</fullName>
+                <default>false</default>
+                <label>Narwar village</label>
+            </value>
+            <value>
+                <fullName>Naya Bazaar</fullName>
+                <default>false</default>
+                <label>Naya Bazaar</label>
+            </value>
+            <value>
+                <fullName>Nedliya</fullName>
+                <default>false</default>
+                <label>Nedliya</label>
+            </value>
+            <value>
+                <fullName>Panchsheel Nagar</fullName>
+                <default>false</default>
+                <label>Panchsheel Nagar</label>
+            </value>
+            <value>
+                <fullName>Parbatpura</fullName>
+                <default>false</default>
+                <label>Parbatpura</label>
+            </value>
+            <value>
+                <fullName>Prithvi Raj Nagar</fullName>
+                <default>false</default>
+                <label>Prithvi Raj Nagar</label>
+            </value>
+            <value>
+                <fullName>Pushkar</fullName>
+                <default>false</default>
+                <label>Pushkar</label>
+            </value>
+            <value>
+                <fullName>Budha Pushkar</fullName>
+                <default>false</default>
+                <label>Budha Pushkar</label>
+            </value>
+            <value>
+                <fullName>Ram Ganj</fullName>
+                <default>false</default>
+                <label>Ram Ganj</label>
+            </value>
+            <value>
+                <fullName>Ram Nagar</fullName>
+                <default>false</default>
+                <label>Ram Nagar</label>
+            </value>
+            <value>
+                <fullName>Saradhana</fullName>
+                <default>false</default>
+                <label>Saradhana</label>
+            </value>
+            <value>
+                <fullName>Shastri Nagar</fullName>
+                <default>false</default>
+                <label>Shastri Nagar</label>
+            </value>
+            <value>
+                <fullName>Srinagar</fullName>
+                <default>false</default>
+                <label>Srinagar</label>
+            </value>
+            <value>
+                <fullName>Station Road</fullName>
+                <default>false</default>
+                <label>Station Road</label>
+            </value>
+            <value>
+                <fullName>Tabiji</fullName>
+                <default>false</default>
+                <label>Tabiji</label>
+            </value>
+            <value>
+                <fullName>Tilora</fullName>
+                <default>false</default>
+                <label>Tilora</label>
+            </value>
+            <value>
+                <fullName>Vaishali Nagar</fullName>
+                <default>false</default>
+                <label>Vaishali Nagar</label>
+            </value>
+            <value>
+                <fullName>Vijaya Raje Nagar</fullName>
+                <default>false</default>
+                <label>Vijaya Raje Nagar</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Adarsh Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Ajay Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Agra gate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Anasagar Link Road</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Ansal City, Main Sikar Road</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Bhagwanpura</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Boraj</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Civil Lines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Chahchiyawas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Chandravardai</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Dargah Baazar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Foysagar Road</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Gagwana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Ganj</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Gulab Bari</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Hari Bhau Upadhyay Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Hathi Khera</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Honkra</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Jaipur Road</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Kotra</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Kayad</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Kesar Ganj</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Kharkheri</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Kundan Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Ladpura</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Lohagal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Madar Gate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Maharana Pratap Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Makadwali</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Mansarovar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Motipura, Khadwasa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Motisar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Narwar Village</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Naya Bazaar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Nedliya</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Panchsheel Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Parbatpura</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Prithvi Raj Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Pushkar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Budha Pushkar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Ram Ganj</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Ram Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Saradhana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Shastri Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Srinagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Station Road</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Tabiji</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Tilora</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Vaishali Nagar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ajmer</controllingFieldValue>
+            <valueName>Vijaya Raje Nagar</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Property_Code__c</fullName>
+    <externalId>false</externalId>
+    <label>Property Code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RQSF (New)</fullName>
+                <default>false</default>
+                <label>RQSF (New)</label>
+            </value>
+            <value>
+                <fullName>RQSF (Resale)</fullName>
+                <default>false</default>
+                <label>RQSF (Resale)</label>
+            </value>
+            <value>
+                <fullName>RQSF (Resale New)</fullName>
+                <default>false</default>
+                <label>RQSF (Resale New)</label>
+            </value>
+            <value>
+                <fullName>RQSP</fullName>
+                <default>false</default>
+                <label>RQSP</label>
+            </value>
+            <value>
+                <fullName>RQSH</fullName>
+                <default>false</default>
+                <label>RQSH</label>
+            </value>
+            <value>
+                <fullName>RQSC</fullName>
+                <default>false</default>
+                <label>RQSC</label>
+            </value>
+            <value>
+                <fullName>RQSPa (Agri)</fullName>
+                <default>false</default>
+                <label>RQSPa (Agri)</label>
+            </value>
+            <value>
+                <fullName>TLC</fullName>
+                <default>false</default>
+                <label>TLC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

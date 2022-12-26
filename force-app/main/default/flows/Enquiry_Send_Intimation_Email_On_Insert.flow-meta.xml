@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Acknowledgement_Email_To_Customer</name>
+        <label>Send Acknowledgement Email To Customer</label>
+        <locationX>176</locationX>
+        <locationY>455</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>emailNotificationBodyCustomer</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>varCustomerEmailAdd</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>mail@sukhsampatti.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Enquiry confirmation by Sukh Sampatti</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_To_SS_Team</name>
+        <label>Send Email To SS Team</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Send_Acknowledgement_Email_To_Customer</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>emailNotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>varEnqEmailRecipientsSSTeam</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>mail@sukhsampatti.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>A new enquiry has been received</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>varCustomerEmailAdd</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Email__c}</expression>
+    </formulas>
+    <formulas>
+        <name>varEnqEmailRecipientsSSTeam</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Enquiry_Recipient_Manager_Email}+&quot;,&quot;+{!$Label.Enquiry_Recipient_Staff_Email}</expression>
+    </formulas>
+    <formulas>
+        <name>varEnqFullName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.First_Name__c} + &quot; &quot;+ {!$Record.Last_Name__c}</expression>
+    </formulas>
+    <formulas>
+        <name>varEnqMobileNum</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.MobilePhone__c}</expression>
+    </formulas>
+    <formulas>
+        <name>varRecordLink</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Current_Org_Link}+&quot;/lightning/r/&quot;+{!$Record.Id}+&quot;/view&quot;</expression>
+    </formulas>
+    <interviewLabel>Enquiry - Send Intimation Email On Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Enquiry - Send Intimation Email On Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Email_To_SS_Team</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Enquiry__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>emailNotificationBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;This is an automated email to inform you that a new enquiry has been generated. Please find the details below:&lt;/p&gt;&lt;p&gt;Name: {!varEnqFullName}&lt;/p&gt;&lt;p&gt;Mobile: {!varEnqMobileNum}&lt;/p&gt;&lt;p&gt;Link to Enquiry record: {!varRecordLink}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Thank You&lt;/p&gt;&lt;p&gt;Team Sukh Sampatti&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>emailNotificationBodyCustomer</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!varEnqFullName}, 
+
+Thank you for your enquiry. We have received your details and will get in touch with you shortly. 
+
+Sincerely,
+Team Sukh Sampatti</text>
+    </textTemplates>
+</Flow>
